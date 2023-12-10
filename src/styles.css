@@ -1,1 +1,104 @@
-/* You can add global styles to this file, and also import other style files */
+@font-face {
+  font-family: 'Inter';
+  font-weight: 400;
+  src: url('./assets/fonts/Inter-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-weight: 500;
+  src: url('./assets/fonts/Inter-Medium.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-weight: 600;
+  src: url('./assets/fonts/Inter-SemiBold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Space Grotesk';
+  src: url('assets/fonts/SpaceGrotesk-Medium.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: url('assets/fonts/icone-material-icons.otf') format('opentype');
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: #E07B67;
+  --primary-text-color: #AFABB6;
+  --second-text-color: #FFFFFF;
+  --header-background: #17171A;
+  --post-background: #17171A;
+  --main-background: #121214;
+  --input-background: #202024;
+  --input-border-color: #252529;
+  /* fonts */
+  --font-inter: 'Inter';
+  --font-space-grotesk: 'Space Grotesk';
+  --font-icon: 'Material Icons';
+}
+
+html {
+  font-size: 10px;
+}
+
+body {
+  font: 1.6rem var(--font-inter);
+}
+
+input {
+  background-color: unset;
+  border: none;
+  outline: none;
+  appearance: unset;
+}
+
+button {
+  border: none;
+  outline: none;
+  background: none;
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  color: unser;
+}
+
+ul, ol, li {
+  list-style: none;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: var(--font-space-grotesk);
+}
+
+::selection {
+  background-color: var(--primary-color);
+  color: #121214;
+}
+
+::-webkit-scrollbar {
+  width: .6rem;
+  height: .6rem;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #202024;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--primary-color);
+  border: solid .2rem #202024;
+}

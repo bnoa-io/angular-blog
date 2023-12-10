@@ -1,0 +1,227 @@
+header{
+  background-color: var(--header-background);
+  height: 20.9rem;
+  padding: 4.8rem 2.4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3.2rem;
+  border-bottom: solid 0.2rem var(--main-background);
+}
+
+header > span {
+  color: var(--second-text-color);
+  font: 2.4rem var(--font-space-grotesk);
+}
+
+header > span > b {
+  font: inherit;
+  color: var(--primary-color);
+}
+
+header .input-group {
+  width: 100%;
+  position: relative;
+}
+
+header .input-group > input {
+  width: 100%;
+  height: 5rem;
+  color: var(--primary-text-color);
+  font-size: 1.4rem;
+  padding-inline: calc(2.4rem + .8rem + 1.8rem);
+  font-weight: 500;
+  border: solid .2rem var(--input-border-color);
+  border-radius: .8rem;
+  background-color: var(--input-background);
+}
+
+header .input-group > input:focus {
+  border-color: var(--primary-color);
+}
+
+header .input-group > input::placeholder {
+  color: var(--primary-text-color);
+}
+
+header .input-group > label {
+  position: absolute;
+  top: calc(50% - 3rem / 2);
+  left: 1.5rem;
+  font: 3rem var(--font-icon);
+  color: var(--primary-color);
+}
+
+main {
+  max-height: calc(100dvh - 20.9rem);
+  overflow-y: auto;
+  background-color: var(--main-background);
+  padding: 4rem 2.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+main > article {
+  display: flex;
+  flex-direction: column;
+  padding: 3.2rem 2.4rem;
+  border-radius: .8rem;
+  border: solid .2rem var(--input-border-color);
+  background-color: var(--post-background);
+}
+
+main > article:hover {
+  border-color: var(--primary-color);
+}
+
+main > article > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+main > article > div > span {
+  font-size: 1.2rem;
+  color: var(--primary-color);
+  font-weight: 500;
+}
+
+main > article > div > input {
+  display: none;
+}
+
+main > article > div > label {
+  display: flex;
+  cursor: pointer;
+}
+
+main > article > div > label::before {
+  content: "favorite_border";
+  font: 2rem var(--font-icon);
+  color: var(--primary-color);
+  transition: ease-in .25s;
+}
+
+main > article > div > input:checked + label::before,
+main > article > div > label:hover::before {
+  content: "favorite";
+}
+
+main > article > h4 {
+  font-size: 2rem;
+  font-weight: 500;
+  line-height: 2.5rem;
+  color: var(--second-text-color);
+  margin-bottom: 1.6rem;
+}
+
+main > article > p {
+  line-height: 2.2rem;
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: var(--primary-text-color);
+}
+
+/* media for tablets */
+@media screen and (min-width: 601px) and (max-width: 959px) {
+  header {
+    height: 29.1rem;
+    padding: 6.4rem 3.2rem;
+  }
+
+  header > span {
+    font-size: 4rem;
+  }
+
+  header .input-group > input {
+    height: 6.4rem;
+    font-size: 2rem;
+    padding-left: calc(2.4rem + 1.6rem + 3.5rem);
+  }
+
+  header .input-group > label {
+    top: calc(50% - 3.5rem / 2);
+    left: 2.4rem;
+    font: 3.5rem var(--font-icon);
+  }
+
+  main {
+    padding: 5.6rem 3.2rem;
+    max-height: calc(100dvh - 29.1rem);
+  }
+
+  main > article {
+    padding: 4rem;
+  }
+
+  main > article > div > span {
+    font-size: 1.4rem;
+  }
+
+  main > article > div > label::before {
+    font: 2.25rem var(--font-icon) !important;
+  }
+
+  main > article > h4 {
+    font-size: 2rem;
+  }
+
+  main > article > p {
+    font-size: 1.6rem;
+    line-height: 2.56rem;
+  }
+}
+
+/* media for desktop */
+@media screen and (min-width: 960px) {
+  header {
+    height: 29.1rem;
+    padding: 6.4rem 10dvw;
+  }
+
+  header > span {
+    font-size: 4rem;
+  }
+
+  header .input-group > input {
+    height: 6.4rem;
+    font-size: 2rem;
+    padding-left: calc(2.4rem + 1.6rem + 3.5rem);
+  }
+
+  header .input-group > label {
+    top: calc(50% - 3.5rem / 2);
+    left: 2.4rem;
+    font: 3.5rem var(--font-icon);
+  }
+
+  main {
+    padding: 8rem 10dvw;
+    max-height: calc(100dvh - 29.1rem);
+    overflow-y: auto;
+  }
+
+  main > article {
+    padding: 4rem;
+  }
+
+  main > article > div > span {
+    font-size: 1.6rem;
+  }
+
+  main > article > div > label::before {
+    font: 2.8rem var(--font-icon) !important;
+  }
+
+  main > article > h4 {
+    font-size: 2.4rem;
+    line-height: 2.5rem;
+  }
+
+  main > article > p {
+    font-size: 2rem;
+    line-height: 3.2rem;
+  }
+}
