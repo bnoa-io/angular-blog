@@ -2,47 +2,22 @@
   <span><b>Simple</b> blog</span>
   <div class="input-group">
     <label for="search">search</label>
-    <input id="search" name="search" type="text" placeholder="Pesquisar no blog" />
+    <input id="search" name="search" type="text" placeholder="Pesquisar no blog" [(ngModel)]="search"
+      (ngModelChange)="onSearchChange($event)" />
   </div>
 </header>
 <main>
+  @for (post of this.posts; track post.isLiked) {
   <article>
     <div>
-      <span>17 de ago, 2024</span>
-      <input type="checkbox" name="like" id="likePost0">
+      <span>{{post.postedAt}}</span>
+      <input type="checkbox" name="like" id="likePost0" [checked]="post.isLiked">
       <label for="likePost0"></label>
     </div>
-    <h4>O que é linguagem de programação? Conheça as principais</h4>
-    <p>
-      Uma das mais populares vertentes da tecnologia da informação,
-      a área de programação segue tendo muita demanda de trabalho
-      justamente pela velocidade com que dispositivos tecnológicos vêm avançando.
-    </p>
+    <h4>{{post.title}}</h4>
+    <p>{{post.content}}</p>
   </article>
-  <article>
-    <div>
-      <span>17 de jul, 2024</span>
-      <input type="checkbox" name="like" id="likePost1">
-      <label for="likePost1"></label>
-    </div>
-    <h4>GitHub agora permite fazer login sem precisar de senha</h4>
-    <p>
-      O GitHub anunciou nesta quarta-feira (12) o acesso a partir das passkeys,
-      método de autenticação sem senhas. A novidade está disponível em uma
-      versão beta pública e pode substituir a autenticação em dois fatores.
-    </p>
-  </article>
-  <article>
-    <div>
-      <span>21 de jun, 2024</span>
-      <input type="checkbox" name="like" id="likePost2">
-      <label for="likePost2"></label>
-    </div>
-    <h4>Por que os hiperlinks são azuis em sua maioria?</h4>
-    <p>
-      Quem navega na internet, certamente já percebeu que ela conta com diversos
-       recursos para tornar a nossa vida mais fácil.
-       ntre essas opções podemos mencionar os hiperlinks – uma palavra ou termo clicável que direciona o leitor.
-    </p>
-  </article>
+  } @empty {
+  <p>Eae</p>
+  }
 </main>

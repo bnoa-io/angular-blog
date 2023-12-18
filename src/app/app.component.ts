@@ -2,14 +2,17 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { PostsComponent } from './pages/posts/posts.component';
+import { CallFakeApiModule } from './modules/call-fake-api.module';
 
 @Component({
   selector: 'app-root',
   standalone: true,
+  providers: [],
   imports: [
     CommonModule,
     RouterOutlet,
-    PostsComponent
+    CallFakeApiModule,
+    PostsComponent,
   ],
   template: `
     <app-posts></app-posts>

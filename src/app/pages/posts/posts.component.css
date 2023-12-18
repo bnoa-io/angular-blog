@@ -53,6 +53,7 @@ header .input-group > label {
 }
 
 main {
+  height: calc(100dvh - 20.9rem);
   max-height: calc(100dvh - 20.9rem);
   overflow-y: auto;
   background-color: var(--main-background);
@@ -149,6 +150,7 @@ main > article > p {
 
   main {
     padding: 5.6rem 3.2rem;
+    height: calc(100dvh - 29.1rem);
     max-height: calc(100dvh - 29.1rem);
   }
 
@@ -199,6 +201,7 @@ main > article > p {
 
   main {
     padding: 8rem 10dvw;
+    height: calc(100dvh - 29.1rem);
     max-height: calc(100dvh - 29.1rem);
     overflow-y: auto;
   }
