@@ -7,12 +7,13 @@
   </div>
 </header>
 <main>
-  @for (post of this.posts; track post.isLiked) {
-  <article>
+  @for (post of this.posts; track post.isLiked; let idx = $index) {
+  <article [attr.data-id]="idx">
     <div>
       <span>{{post.postedAt}}</span>
-      <input type="checkbox" name="like" id="likePost0" [checked]="post.isLiked">
-      <label for="likePost0"></label>
+      <input type="checkbox" name="like" [id]="'likePost'+idx" [checked]="post.isLiked"
+        (change)="likePost(post, $event)">
+      <label [for]="'likePost'+idx"></label>
     </div>
     <h4>{{post.title}}</h4>
     <p>{{post.content}}</p>

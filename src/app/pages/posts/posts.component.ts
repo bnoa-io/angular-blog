@@ -36,4 +36,12 @@ export class PostsComponent implements OnInit {
     // add debounce here
     this.posts = this.backupPosts.filter((el:any) => el.postedAt.includes(currentValue) || el.content.includes(currentValue) || el.title.includes(currentValue));
   }
+
+  likePost(post: any, event: any){
+    post.isLiked = event.target.value === 'on';
+    this.connection.put(`api/posts/${post.id}`, post).subscribe({
+      next: () => console.log(post),
+      error: (error) => console.log(error)
+    });
+  }
 }
